@@ -42,12 +42,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 transition={{ duration: 0.5 }}
                 className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm"
               >
-                <img
-                  src="/src/assets/favicon.png"
-                  alt="Logo"
-                  width={24}
-                  height={24}
-                />
+                <img src="/assets/logo.png" alt="Logo" width={24} height={24} />
               </motion.div>
               <span className="text-2xl font-bold tracking-wider">GetFame</span>
             </div>

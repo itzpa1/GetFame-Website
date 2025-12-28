@@ -60,43 +60,54 @@ export function Hero({ onDownload }: HeroProps) {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text */}
-          <div className="space-y-6 text-center lg:text-left">
+          <div className="space-y-8 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-bold">
+              <ShieldCheck className="w-4 h-4" />
+              Verified Safe & Secure APK
+            </div>
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15]"
+              className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]"
             >
-              GetFame App <br />
-              Download{" "}
-              <span className="text-[#aa00ff]">
-                The <br /> original version
-              </span>
+              Boost Your <br />
+              Social Media <br />
+              <span className="text-[#aa00ff]">Instantly.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 font-medium"
+              className="text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 font-medium"
             >
-              Upgrade your social media presence with GetFame. Supports
-              Instagram, Telegram, Facebook, Twitter, YouTube, and TikTok.
+              Download the official GetFame APK and get real followers, likes,
+              and views in minutes. No passwords, no coins, just results.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
             >
               <Button
                 size="lg"
                 onClick={onDownload}
-                className="bg-[#aa00ff] hover:bg-[#9000d9] text-white rounded-full px-10 h-14 text-lg font-bold shadow-xl shadow-purple-500/30 transition-transform hover:scale-105"
+                className="bg-[#aa00ff] hover:bg-[#9000d9] text-white rounded-full px-12 h-16 text-xl font-black shadow-2xl shadow-purple-500/40 transition-all hover:scale-105 active:scale-95"
               >
-                Download Apk File
+                Download Now (FREE)
               </Button>
+              <div className="flex flex-col justify-center items-center lg:items-start">
+                <span className="text-sm font-bold text-foreground">
+                  v1.0.4 - Latest
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  Updated 2 days ago
+                </span>
+              </div>
             </motion.div>
 
             {/* Platform Icons Row */}

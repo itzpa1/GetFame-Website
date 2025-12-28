@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Menu,
   X,
-  Heart,
   ChevronDown,
   Layers,
   Facebook,
@@ -40,12 +39,7 @@ export function Navbar({ onNavigate, onDownload }: NavbarProps) {
               onClick={() => onNavigate("home")}
               className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/20 cursor-pointer"
             >
-              <img
-                src="/src/assets/favicon.png"
-                alt="Logo"
-                width={24}
-                height={24}
-              />
+              <img src="/assets/logo.png" alt="Logo" width={24} height={24} />
             </motion.div>
             <span
               onClick={() => onNavigate("home")}
@@ -127,12 +121,12 @@ export function Navbar({ onNavigate, onDownload }: NavbarProps) {
                 whileTap={{ scale: 0.95 }}
                 className="relative"
               >
-                {/* <span className="absolute -inset-1 rounded-full bg-purple-500/20 animate-ping"></span> */}
+                <span className="absolute -inset-1 rounded-full bg-purple-500/40 animate-pulse blur-sm"></span>
                 <Button
                   onClick={onDownload}
-                  className="relative bg-[#aa00ff] hover:bg-[#9000d9] text-white rounded-full px-8 font-semibold shadow-lg shadow-purple-500/20"
+                  className="relative bg-[#aa00ff] hover:bg-[#9000d9] text-white rounded-full px-8 font-bold shadow-lg shadow-purple-500/20 transition-all"
                 >
-                  Download
+                  Download Now
                 </Button>
               </motion.div>
             </div>

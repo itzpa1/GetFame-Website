@@ -16,6 +16,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Skeleton } from "./components/ui/skeleton";
 import { AdBanner } from "./components/ads/AdBanner";
 import { InterstitialAd } from "./components/ads/InterstitialAd";
+import { Screenshots } from "./components/landing/Screenshots";
 
 export type Page = "home" | "privacy" | "tos" | "cookie" | "help" | "contact";
 
@@ -105,6 +106,7 @@ export default function App() {
               onDownload={handleDownloadClick}
             />
             <Hero onDownload={handleDownloadClick} />
+            <Screenshots />
             <AdBanner />
             <Features />
             <HowItWorks />
