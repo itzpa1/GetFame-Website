@@ -115,7 +115,7 @@ export function Hero({ onDownload }: HeroProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex items-center justify-center lg:justify-start text-muted-foreground/50 gap-2 md:gap-0"
+              className="flex items-center justify-center lg:justify-start text-muted-foreground/50 gap-2 "
             >
               {socialLinks.map((social, index) => (
                 <Tooltip key={index}>

@@ -70,7 +70,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </TooltipProvider>
             </div>
           </div>
-          <div className="md:col-span-3 grid grid-cols-3 sm:grid-cols-3 gap-12">
+          <div className="md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-12">
             <div>
               <h4 className="font-bold text-lg mb-6">Menu</h4>
               <ul className="space-y-3">
@@ -97,6 +97,14 @@ export function Footer({ onNavigate }: FooterProps) {
                   >
                     How it works
                   </a>
+                </li>
+                <li>
+                  <button
+                    onClick={() => onNavigate("about")}
+                    className="text-white/80 hover:text-white transition-colors text-sm text-left"
+                  >
+                    About Us
+                  </button>
                 </li>
                 <li>
                   <a
@@ -175,10 +183,23 @@ export function Footer({ onNavigate }: FooterProps) {
           <p className="text-white/60 text-xs">
             © {new Date().getFullYear()} GetFame. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-white/60 text-xs">
-            <span>Made with</span>
-            <Heart className="w-3 h-3 text-red-400 fill-red-400" />
-            <span>for Social Media Users</span>
+          <div className="flex flex-col items-center md:items-end gap-2 text-white/60 text-xs">
+            <div className="flex items-center gap-2">
+              <span>Made with</span>
+              <Heart className="w-3 h-3 text-red-400 fill-red-400" />
+              <span>for Social Media Users</span>
+            </div>
+            <p>
+              Developed by{" "}
+              <a
+                href="https://instagram.com/code.itzpa1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-purple-200 font-medium transition-colors"
+              >
+                @Code.itzpa1
+              </a>
+            </p>
           </div>
         </div>
       </div>

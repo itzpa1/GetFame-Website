@@ -23,60 +23,123 @@ export function TermsOfService({ onBack }: TermsOfServiceProps) {
           Terms of Service
         </h1>
 
-        <div className="prose prose-purple dark:prose-invert max-w-none space-y-6 text-muted-foreground">
+        <div className="prose prose-purple dark:prose-invert max-w-none space-y-8 text-muted-foreground">
+          <p>
+            Welcome to GetFame! These terms and conditions outline the rules and
+            regulations for the use of GetFame's Website, located at
+            https://getfame-free.vercel.app/.
+          </p>
+
+          <p>
+            By accessing this website we assume you accept these terms and
+            conditions. Do not continue to use GetFame if you do not agree to
+            take all of the terms and conditions stated on this page.
+          </p>
+
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">
-              1. Acceptance of Terms
+              1. Cookies
             </h2>
             <p>
-              By accessing and using GetFame, you accept and agree to be bound
-              by the terms and provision of this agreement.
+              We employ the use of cookies. By accessing GetFame, you agreed to
+              use cookies in agreement with the GetFame's Privacy Policy. Most
+              interactive websites use cookies to let us retrieve the user's
+              details for each visit. Cookies are used by our website to enable
+              the functionality of certain areas to make it easier for people
+              visiting our website. Some of our affiliate/advertising partners
+              may also use cookies.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">
-              2. Use of Service
+              2. License
             </h2>
             <p>
-              You agree to use GetFame only for purposes that are permitted by
-              the Terms and any applicable law, regulation or generally accepted
-              practices or guidelines in the relevant jurisdictions.
+              Unless otherwise stated, GetFame and/or its licensors own the
+              intellectual property rights for all material on GetFame. All
+              intellectual property rights are reserved. You may access this
+              from GetFame for your own personal use subjected to restrictions
+              set in these terms and conditions.
+            </p>
+            <p className="mt-4">You must not:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Republish material from GetFame</li>
+              <li>Sell, rent or sub-license material from GetFame</li>
+              <li>Reproduce, duplicate or copy material from GetFame</li>
+              <li>Redistribute content from GetFame</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
+              3. User Comments
+            </h2>
+            <p>
+              Parts of this website offer an opportunity for users to post and
+              exchange opinions and information in certain areas of the website.
+              GetFame does not filter, edit, publish or review Comments prior to
+              their presence on the website. Comments do not reflect the views
+              and opinions of GetFame, its agents and/or affiliates. Comments
+              reflect the views and opinions of the person who post their views
+              and opinions.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">
-              3. User Conduct
+              4. Hyperlinking to our Content
             </h2>
             <p>
-              You are solely responsible for your conduct and any data, text,
-              information, screen names, graphics, photos, profiles, audio and
-              video clips, links that you submit, post, and display on the
-              GetFame service.
+              The following organizations may link to our Website without prior
+              written approval: Government agencies, Search engines, News
+              organizations, Online directory distributors may link to our
+              Website in the same manner as they hyperlink to the Websites of
+              other listed businesses.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">
-              4. Termination
+              5. Content Liability
             </h2>
             <p>
-              We may terminate or suspend access to our Service immediately,
-              without prior notice or liability, for any reason whatsoever,
-              including without limitation if you breach the Terms.
+              We shall not be hold responsible for any content that appears on
+              your Website. You agree to protect and defend us against all
+              claims that is rising on your Website. No link(s) should appear on
+              any Website that may be interpreted as libellous, obscene or
+              criminal, or which infringes, otherwise violates, or advocates the
+              infringement or other violation of, any third party rights.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">
-              5. Governing Law
+              6. Disclaimer
             </h2>
             <p>
-              These Terms shall be governed and construed in accordance with the
-              laws of the jurisdiction in which GetFame operates, without regard
-              to its conflict of law provisions.
+              To the maximum extent permitted by applicable law, we exclude all
+              representations, warranties and conditions relating to our website
+              and the use of this website. Nothing in this disclaimer will:
             </p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+              <li>
+                limit or exclude our or your liability for death or personal
+                injury;
+              </li>
+              <li>
+                limit or exclude our or your liability for fraud or fraudulent
+                misrepresentation;
+              </li>
+              <li>
+                limit any of our or your liabilities in any way that is not
+                permitted under applicable law; or
+              </li>
+              <li>
+                exclude any of our or your liabilities that may not be excluded
+                under applicable law.
+              </li>
+            </ul>
           </section>
         </div>
       </div>

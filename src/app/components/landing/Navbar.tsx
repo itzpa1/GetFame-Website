@@ -108,6 +108,12 @@ export function Navbar({ onNavigate, onDownload }: NavbarProps) {
               Help Center
             </button>
             <button
+              onClick={() => onNavigate("about")}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              About
+            </button>
+            <button
               onClick={() => onNavigate("contact")}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -194,6 +200,15 @@ export function Navbar({ onNavigate, onDownload }: NavbarProps) {
                 }}
               >
                 Help Center
+              </button>
+              <button
+                className="text-base font-medium text-left text-foreground hover:text-primary"
+                onClick={() => {
+                  onNavigate("about");
+                  setIsOpen(false);
+                }}
+              >
+                About
               </button>
               <button
                 className="text-base font-medium text-left text-foreground hover:text-primary"
