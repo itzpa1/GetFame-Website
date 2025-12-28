@@ -166,6 +166,14 @@ export function Footer({ onNavigate }: FooterProps) {
                     Cookie Policy
                   </button>
                 </li>
+                <li>
+                  <button
+                    onClick={() => onNavigate("disclaimer")}
+                    className="text-white/80 hover:text-white transition-colors text-sm text-left"
+                  >
+                    Disclaimer
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
