@@ -106,14 +106,6 @@ export function Footer({ onNavigate }: FooterProps) {
                     About Us
                   </button>
                 </li>
-                <li>
-                  <a
-                    href="#blog"
-                    className="text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    Blog
-                  </a>
-                </li>
               </ul>
             </div>
 

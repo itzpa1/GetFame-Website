@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/landing/Navbar";
 import { Hero } from "./components/landing/Hero";
 import { Features } from "./components/landing/Features";
@@ -18,6 +19,7 @@ import { Skeleton } from "./components/ui/skeleton";
 import { AdBanner } from "./components/ads/AdBanner";
 import { InterstitialAd } from "./components/ads/InterstitialAd";
 import { Screenshots } from "./components/landing/Screenshots";
+import { Disclaimer } from "./components/legal/Disclaimer";
 
 export type Page =
   | "home"
@@ -26,17 +28,19 @@ export type Page =
   | "cookie"
   | "help"
   | "contact"
-  | "about";
+  | "about"
+  | "disclaimer";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const navigate = useNavigate();
+  const location = useLocation();
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showAd, setShowAd] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage]);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,6 +71,20 @@ export default function App() {
     alert("Download started! Check your notifications.");
   };
 
+  const handleNavigate = (page: Page) => {
+    const routes: Record<Page, string> = {
+      home: "/",
+      privacy: "/privacy-policy",
+      tos: "/terms-of-service",
+      cookie: "/cookie-policy",
+      help: "/help",
+      contact: "/contact-us",
+      about: "/about-us",
+      disclaimer: "/disclaimer",
+    };
+    navigate(routes[page]);
+  };
+
   const renderSkeleton = () => (
     <div className="container mx-auto px-4 py-20 space-y-12">
       <Skeleton className="h-20 w-full rounded-2xl" />
@@ -87,51 +105,63 @@ export default function App() {
     </div>
   );
 
-  const renderPage = () => {
-    if (isLoading && currentPage === "home") return renderSkeleton();
+  const HomePage = () => {
+    if (isLoading) return renderSkeleton();
 
-    switch (currentPage) {
-      case "privacy":
-        return <PrivacyPolicy onBack={() => setCurrentPage("home")} />;
-      case "tos":
-        return <TermsOfService onBack={() => setCurrentPage("home")} />;
-      case "cookie":
-        return <CookiePolicy onBack={() => setCurrentPage("home")} />;
-      case "help":
-        return (
-          <HelpCenter
-            onBack={() => setCurrentPage("home")}
-            onNavigate={setCurrentPage}
-          />
-        );
-      case "contact":
-        return <ContactUs onBack={() => setCurrentPage("home")} />;
-      case "about":
-        return <AboutUs onBack={() => setCurrentPage("home")} />;
-      default:
-        return (
-          <>
-            <Navbar
-              onNavigate={setCurrentPage}
-              onDownload={handleDownloadClick}
-            />
-            <Hero onDownload={handleDownloadClick} />
-            <Screenshots />
-            <AdBanner />
-            <Features />
-            <HowItWorks />
-            <AdBanner />
-            <FAQ onNavigate={setCurrentPage} />
-            <Footer onNavigate={setCurrentPage} />
-          </>
-        );
-    }
+    return (
+      <>
+        <Navbar onNavigate={handleNavigate} onDownload={handleDownloadClick} />
+        <Hero onDownload={handleDownloadClick} />
+        <Screenshots />
+        <AdBanner />
+        <Features />
+        <HowItWorks />
+        <AdBanner />
+        <FAQ onNavigate={handleNavigate} />
+        <Footer onNavigate={handleNavigate} />
+      </>
+    );
   };
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="min-h-screen bg-background text-foreground selection:bg-purple-500 selection:text-white transition-colors duration-300">
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/about-us"
+            element={<AboutUs onBack={() => navigate("/")} />}
+          />
+          <Route
+            path="/privacy-policy"
+            element={<PrivacyPolicy onBack={() => navigate("/")} />}
+          />
+          <Route
+            path="/terms-of-service"
+            element={<TermsOfService onBack={() => navigate("/")} />}
+          />
+          <Route
+            path="/cookie-policy"
+            element={<CookiePolicy onBack={() => navigate("/")} />}
+          />
+          <Route
+            path="/disclaimer"
+            element={<Disclaimer onBack={() => navigate("/")} />}
+          />
+          <Route
+            path="/help"
+            element={
+              <HelpCenter
+                onBack={() => navigate("/")}
+                onNavigate={handleNavigate}
+              />
+            }
+          />
+          <Route
+            path="/contact-us"
+            element={<ContactUs onBack={() => navigate("/")} />}
+          />
+        </Routes>
 
         <InterstitialAd
           isOpen={showAd}
