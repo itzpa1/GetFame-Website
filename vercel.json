@@ -13,8 +13,10 @@
     {
       "source": "/proxied-api/:path*",
       "headers": [
-        { "key": "Referer", "value": "https://zefame-free.com/" },
-        { "key": "Origin", "value": "https://zefame-free.com" },
+        {
+          "key": "X-Note",
+          "value": "Referer and Origin headers are set dynamically in api/proxy.js using API_BASE_URL environment variable"
+        },
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     }
