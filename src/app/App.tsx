@@ -13,6 +13,7 @@ import { CookiePolicy } from "./components/legal/CookiePolicy";
 import { HelpCenter } from "./components/support/HelpCenter";
 import { ContactUs } from "./components/support/ContactUs";
 import { AboutUs } from "./components/legal/AboutUs";
+import { InstagramDemo } from "./components/demo/InstagramDemo";
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Skeleton } from "./components/ui/skeleton";
@@ -20,7 +21,7 @@ import { AdBanner } from "./components/ads/AdBanner";
 import { InterstitialAd } from "./components/ads/InterstitialAd";
 import { Screenshots } from "./components/landing/Screenshots";
 import { Disclaimer } from "./components/legal/Disclaimer";
-
+import { DemoBanner } from "./components/landing/DemoBanner";
 export type Page =
   | "home"
   | "privacy"
@@ -68,7 +69,7 @@ export default function App() {
   const handleAdComplete = () => {
     // Here you would normally trigger the actual download
     console.log("Download started after ad");
-    alert("Download started! Check your notifications.");
+    alert("APK Coming Soon, Stay Tuned!");
   };
 
   const handleNavigate = (page: Page) => {
@@ -115,6 +116,7 @@ export default function App() {
         <Screenshots />
         <AdBanner />
         <Features />
+        <DemoBanner />
         <HowItWorks />
         <AdBanner />
         <FAQ onNavigate={handleNavigate} />
@@ -160,6 +162,15 @@ export default function App() {
           <Route
             path="/contact-us"
             element={<ContactUs onBack={() => navigate("/")} />}
+          />
+          <Route
+            path="/demo/instagram-views"
+            element={
+              <InstagramDemo
+                onBack={() => navigate("/")}
+                onDownload={handleDownloadClick}
+              />
+            }
           />
         </Routes>
 

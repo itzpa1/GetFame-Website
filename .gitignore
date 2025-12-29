@@ -8,10 +8,13 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-ENV_SETUP.md
 dist
 dist-ssr
 *.local
+demosite.html
+ATTRIBUTION.md
+test.md
+ENV_SETUP.md
 
 # Editor directories and files
 .vscode/*

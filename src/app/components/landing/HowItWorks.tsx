@@ -1,7 +1,7 @@
 import React from "react";
 import { Download, ShieldCheck, Zap, Coins, UserCheck } from "lucide-react";
 import { motion } from "motion/react";
-import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { ImageWithFallback } from "../ui/ImageWithFallback";
 
 const steps = [
   {

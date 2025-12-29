@@ -12,16 +12,20 @@ import {
   Youtube,
   Send,
   Music,
+  Play,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { useNavigate } from "react-router-dom";
 
 interface HeroProps {
   onDownload: () => void;
 }
 
 export function Hero({ onDownload }: HeroProps) {
+  const navigate = useNavigate();
+
   const socialLinks = [
     { icon: <Instagram className="w-5 h-5" />, label: "Instagram", href: "#" },
     { icon: <Facebook className="w-5 h-5" />, label: "Facebook", href: "#" },
@@ -100,14 +104,29 @@ export function Hero({ onDownload }: HeroProps) {
               >
                 Download Now (FREE)
               </Button>
-              <div className="flex flex-col justify-center items-center lg:items-start">
-                <span className="text-sm font-bold text-foreground">
-                  v1.0.4 - Latest
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  Updated 2 days ago
-                </span>
-              </div>
+              <Button
+                size="lg"
+                onClick={() => navigate("/demo/instagram-views")}
+                variant="outline"
+                className="border-2 border-purple-500/30 hover:bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full px-8 h-16 text-lg font-bold transition-all hover:scale-105 active:scale-95"
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Try Demo
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col justify-center items-center lg:items-start"
+            >
+              <span className="text-sm font-bold text-foreground">
+                v1.0.4 - Latest
+              </span>
+              <span className="text-xs text-muted-foreground">
+                Updated 2 days ago
+              </span>
             </motion.div>
 
             {/* Platform Icons Row */}

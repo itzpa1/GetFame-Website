@@ -1,8 +1,22 @@
 {
   "rewrites": [
     {
+      "source": "/proxied-api/:path*",
+      "destination": "/api/proxy"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/proxied-api/:path*",
+      "headers": [
+        { "key": "Referer", "value": "https://zefame-free.com/" },
+        { "key": "Origin", "value": "https://zefame-free.com" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
   ]
 }
