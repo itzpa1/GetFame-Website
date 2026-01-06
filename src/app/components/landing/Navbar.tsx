@@ -9,7 +9,7 @@ import {
   Twitter,
   Youtube,
   Send,
-  Music,
+  Music2,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/theme-toggle";
@@ -82,7 +82,7 @@ export function Navbar({ onNavigate, onDownload }: NavbarProps) {
                     <span className="text-[10px] font-medium">YouTube</span>
                   </div>
                   <div className="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                    <Music className="w-5 h-5 text-black dark:text-white" />
+                    <Music2 className="w-5 h-5 text-black dark:text-white" />
                     <span className="text-[10px] font-medium">TikTok</span>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export function Navbar({ onNavigate, onDownload }: NavbarProps) {
                   <Facebook className="w-5 h-5 text-blue-600 shrink-0" />
                   <Twitter className="w-5 h-5 text-sky-500 shrink-0" />
                   <Youtube className="w-5 h-5 text-red-500 shrink-0" />
-                  <Music className="w-5 h-5 text-black dark:text-white shrink-0" />
+                  <Music2 className="w-5 h-5 text-black dark:text-white shrink-0" />
                 </div>
               </div>
               <a

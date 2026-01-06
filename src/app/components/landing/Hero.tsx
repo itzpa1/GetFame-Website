@@ -11,8 +11,7 @@ import {
   Twitter,
   Youtube,
   Send,
-  Music,
-  Play,
+  Music2
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
@@ -31,7 +30,7 @@ export function Hero({ onDownload }: HeroProps) {
     { icon: <Facebook className="w-5 h-5" />, label: "Facebook", href: "#" },
     { icon: <Twitter className="w-5 h-5" />, label: "Twitter", href: "#" },
     { icon: <Youtube className="w-5 h-5" />, label: "YouTube", href: "#" },
-    { icon: <Music className="w-5 h-5" />, label: "TikTok", href: "#" },
+    { icon: <Music2 className="w-5 h-5" />, label: "TikTok", href: "#" },
     { icon: <Send className="w-5 h-5" />, label: "Telegram", href: "#" },
   ];
   return (
@@ -108,10 +107,10 @@ export function Hero({ onDownload }: HeroProps) {
                 size="lg"
                 onClick={() => navigate("/demo/instagram-views")}
                 variant="outline"
-                className="border-2 border-purple-500/30 hover:bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full px-8 h-16 text-lg font-bold transition-all hover:scale-105 active:scale-95"
+                className="border-2 border-purple-500/30 hover:bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full px-8 h-16 text-lg font-bold transition-all hover:scale-105 active:scale-95 "
               >
-                <Play className="w-5 h-5 mr-2" />
-                Try Demo
+                <Gift className="w-5 h-5 mr-2 size-" />
+                Try Free Demo
               </Button>
             </motion.div>
 
@@ -235,7 +234,7 @@ export function Hero({ onDownload }: HeroProps) {
             <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-20 -right-4 sm:right-10 bg-white dark:bg-gray-800 p-3 rounded-full shadow-xl"
+              className="absolute top-20 -right-4 sm:-right-10 bg-white dark:bg-gray-800 p-3 rounded-full shadow-xl z-10"
             >
               <div className="w-10 h-10 rounded-full border-2 border-[#aa00ff] flex items-center justify-center text-[#aa00ff]">
                 <ShieldCheck className="w-6 h-6" />
@@ -250,7 +249,7 @@ export function Hero({ onDownload }: HeroProps) {
                 ease: "easeInOut",
                 delay: 1,
               }}
-              className="absolute bottom-20 -left-4 sm:left-10 bg-white dark:bg-gray-800 p-3 rounded-full shadow-xl"
+              className="absolute bottom-20 -left-4 sm:-left-10 bg-white dark:bg-gray-800 p-3 rounded-full shadow-xl z-10"
             >
               <div className="w-10 h-10 rounded-full border-2 border-[#aa00ff] flex items-center justify-center text-[#aa00ff]">
                 <Heart className="w-6 h-6 fill-[#aa00ff]" />

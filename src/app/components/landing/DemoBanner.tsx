@@ -1,5 +1,5 @@
 import React from "react";
-import { Play, Sparkles, TrendingUp } from "lucide-react";
+import { Gift, Play, Sparkles, TrendingUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ export function DemoBanner() {
                     onClick={() => navigate("/demo/instagram-views")}
                     className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg shadow-purple-500/30 transition-all hover:scale-105"
                   >
-                    <Play className="w-5 h-5 mr-2" />
+                    <Gift className="w-5 h-5 mr-2 size-2" />
                     Try Free Demo
                   </Button>
                 </div>
@@ -59,7 +59,7 @@ export function DemoBanner() {
                 >
                   <TrendingUp className="w-8 h-8 text-purple-500 mx-auto mb-2" />
                   <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">
-                    500+
+                    300+
                   </div>
                   <div className="text-sm text-muted-foreground">
                     Demo Views

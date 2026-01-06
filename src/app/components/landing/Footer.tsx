@@ -6,7 +6,7 @@ import {
   Facebook,
   Youtube,
   Send,
-  Music,
+  Music2,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { Page } from "../../App";
@@ -27,7 +27,7 @@ export function Footer({ onNavigate }: FooterProps) {
     { icon: <Facebook className="w-5 h-5" />, label: "Facebook", href: "#" },
     { icon: <Twitter className="w-5 h-5" />, label: "Twitter", href: "#" },
     { icon: <Youtube className="w-5 h-5" />, label: "YouTube", href: "#" },
-    { icon: <Music className="w-5 h-5" />, label: "TikTok", href: "#" },
+    { icon: <Music2 className="w-5 h-5" />, label: "TikTok", href: "#" },
     { icon: <Send className="w-5 h-5" />, label: "Telegram", href: "#" },
   ];
 

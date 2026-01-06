@@ -10,29 +10,54 @@ import { Page } from "../../App";
 
 const faqs = [
   {
-    question: "Is GetFame safe to use?",
+    question: "How to use GetFame?",
     answer:
-      "Yes, GetFame is designed with user security in mind. We do not store your passwords or sensitive personal data. Millions of users trust our app for their social media growth.",
+      "Using GetFame is simple and completely free. No signup or login is required. Just visit the platform, choose the service you need, enter the required link or username, and submit. The results will start appearing shortly.",
   },
   {
-    question: "How do I download the APK?",
+    question: "Are there risks for my account using GetFame?",
     answer:
-      "Simply click on the 'Download APK' button at the top of this page. The download will start automatically. Once downloaded, open the file to install it on your Android device.",
+      "GetFame prioritizes user safety. Our methods are designed to minimize risk while delivering results. To avoid any issues, it is recommended not to use multiple similar services at the same time.",
   },
   {
-    question: "Is it free?",
+    question: "How do I know GetFame is reliable?",
     answer:
-      "Yes, the basic features of GetFame are completely free. You can earn coins by performing tasks and use them to get followers. There are also optional paid features for faster growth.",
+      "GetFame is trusted by thousands of users worldwide. Since all services are free, users can try and verify the results themselves without any commitment.",
   },
   {
-    question: "Can I use it on iOS/iPhone?",
+    question: "When will I see results after using a service?",
     answer:
-      "Currently, GetFame is primarily an Android application (.apk). However, we are working on a web version and iOS solution. Stay tuned for updates!",
+      "Results usually start appearing within minutes, but the exact timing depends on the service and current demand. In some cases, it may take a few hours.",
   },
   {
-    question: "Will my social accounts get banned?",
+    question: "What if my followers, likes, or views drop?",
     answer:
-      "If used responsibly, your account is safe. We recommend using a secondary account to earn coins and sending the followers to your main account to minimize any risk.",
+      "Drops can occasionally happen due to platform updates or cleanups. If a drop occurs, you can simply use the service again, as GetFame is completely free.",
+  },
+  {
+    question: "How does GetFame ensure service quality?",
+    answer:
+      "All services on GetFame are regularly tested and monitored to maintain consistent quality and performance.",
+  },
+  {
+    question: "How to get my TikTok profile link?",
+    answer:
+      "Open the TikTok app and go to your profile by tapping the profile icon. Tap your profile picture or the three-dot menu and select 'Copy link'. Your profile link will be copied to your clipboard.",
+  },
+  {
+    question: 'Why is my order status "Partial"?',
+    answer:
+      'A "Partial" status means the full amount could not be delivered. For example, if 10,000 views were requested and 9,000 were delivered, the remaining portion was not completed.',
+  },
+  {
+    question: "Do you need my passwords?",
+    answer:
+      "No. GetFame never asks for passwords or personal information. Your account security and privacy are always protected.",
+  },
+  {
+    question: "Why should I use GetFame?",
+    answer:
+      "Higher numbers on social media help build credibility and attract more engagement. GetFame helps boost visibility and social proof at no cost.",
   },
 ];
 
@@ -47,7 +72,7 @@ export function FAQ({ onNavigate }: FAQProps) {
       className="py-20 bg-background transition-colors duration-300"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 sm:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,48 +86,78 @@ export function FAQ({ onNavigate }: FAQProps) {
               Have questions? We're here to help. If you don't see your question
               here, feel free to contact our support.
             </p>
-            <div className="p-6 bg-card rounded-2xl border border-border shadow-sm">
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                Still have questions?
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Can't find the answer you're looking for? Please chat to our
-                friendly team.
-              </p>
-              <button
-                onClick={() => onNavigate("contact")}
-                className="text-[#aa00ff] font-medium hover:text-[#9000d9] transition-colors"
-              >
-                Contact Support &rarr;
-              </button>
-            </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-card/50 p-6 rounded-2xl border border-border shadow-sm"
+            transition={{ duration: 0.7 }}
+            className="p-6 bg-card rounded-2xl border border-border shadow-sm"
           >
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border-border"
-                >
-                  <AccordionTrigger className="text-foreground hover:text-[#aa00ff] text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              Still have questions?
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Can't find the answer you're looking for? Please chat to our
+              friendly team.
+            </p>
+            <button
+              onClick={() => onNavigate("contact")}
+              className="text-[#aa00ff] font-medium hover:text-[#9000d9] transition-colors"
+            >
+              Contact Support &rarr;
+            </button>
           </motion.div>
         </div>
+
+        {/* FAQ */}
+
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-card/50 shadow-sm grid sm:grid-cols-2 gap-4 relative mt-4 sm:mt-0"
+        >
+          <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[250px] h-[250px] sm:w-[200px] sm:h-[400px] bg-[#aa00ff] rounded-full mix-blend-multiply dark:mix-blend-normal opacity-30 dark:opacity-20 blur-2xl z-0"></div>
+
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full z-10 backdrop-blur-2xl space-y-4"
+          >
+            {faqs.slice(0, Math.ceil(faqs.length) / 2).map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-border"
+              >
+                <AccordionTrigger className="text-foreground text-left">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full z-10 backdrop-blur-2xl space-y-4"
+          >
+            {faqs.slice(Math.ceil(faqs.length) / 2).map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-border"
+              >
+                <AccordionTrigger className="text-foreground text-left">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
       </div>
     </section>
   );
